@@ -112,9 +112,36 @@ def select_complementary_reputation(reg: Registry, req: np.ndarray, k: int) -> l
     return team
 
 
+def select_oracle_true(reg: Registry, req: np.ndarray, k: int) -> list[int]:
+    """Upper bound: greedy cover using true skills (oracle knows ground truth)."""
+    ids = list(map(int, reg.active_ids()))
+    if not ids:
+        return []
+    remaining = req.copy()
+    team: list[int] = []
+    for _ in range(k):
+        if not np.any(remaining > 0):
+            break
+        best_i = None
+        best_gain = -1.0
+        for i in ids:
+            if i in team:
+                continue
+            gain = float(np.sum((reg.true_skills[i] > 0) & (remaining > 0)))
+            if gain > best_gain:
+                best_gain = gain
+                best_i = i
+        if best_i is None or best_gain <= 0:
+            break
+        team.append(best_i)
+        remaining = np.maximum(remaining - reg.true_skills[best_i], 0)
+    return team
+
+
 METHODS = {
     "random": select_random,
     "similarity": select_similarity,
     "complementary": select_complementary_greedy,
     "comp+rep": select_complementary_reputation,
+    "oracle": select_oracle_true,
 }

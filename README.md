@@ -77,6 +77,16 @@ python -m src.run_all --paper --fresh --n-agents 200 --api-tasks 24 --ks 3 5 --c
 
 Checkpoints live in `results/checkpoints/`.
 
+### Multi-seed stats (paper Table 1, offline)
+
+Reproduce mean ± std over five seeds (no API):
+
+```bash
+PYTHONPATH=. python scripts/run_multiseed.py
+```
+
+Output: `results/multiseed_paper_protocol.json`
+
 
 ## Layout
 
