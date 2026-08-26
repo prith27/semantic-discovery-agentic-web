@@ -6,8 +6,9 @@ __pycache__/
 results/api_cache/
 results/checkpoints/
 results/paper_run.log
+paper/
+figures/
 *.aux
 *.log
 *.out
 *.synctex.gz
-paper/main.pdf
