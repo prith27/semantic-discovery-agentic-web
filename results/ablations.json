@@ -1,0 +1,89 @@
+{
+  "spam_frac_sweep_k5": {
+    "0.0": {
+      "similarity": 0.95,
+      "complementary": 1.0,
+      "comp+rep": 1.0
+    },
+    "0.2": {
+      "similarity": 0.875,
+      "complementary": 0.025,
+      "comp+rep": 0.988
+    },
+    "0.4": {
+      "similarity": 0.713,
+      "complementary": 0.0,
+      "comp+rep": 0.975
+    },
+    "0.6": {
+      "similarity": 0.675,
+      "complementary": 0.013,
+      "comp+rep": 1.0
+    },
+    "0.8": {
+      "similarity": 0.525,
+      "complementary": 0.0,
+      "comp+rep": 1.0
+    }
+  },
+  "ablation_spam04_k5": {
+    "comp": {
+      "final": 0.0,
+      "curve": [
+        0.0
+      ]
+    },
+    "rep": {
+      "final": 1.0,
+      "curve": [
+        0.525,
+        0.963,
+        0.988,
+        0.988,
+        1.0
+      ]
+    },
+    "probes": {
+      "final": 0.975,
+      "curve": [
+        0.8,
+        0.938,
+        0.975,
+        1.0,
+        0.975
+      ]
+    },
+    "both": {
+      "final": 0.975,
+      "curve": [
+        0.8,
+        0.938,
+        0.975,
+        1.0,
+        0.975
+      ]
+    }
+  },
+  "n_agents_spam04_k5": {
+    "50": {
+      "similarity": 0.725,
+      "complementary": 0.025,
+      "comp+rep": 0.988
+    },
+    "100": {
+      "similarity": 0.713,
+      "complementary": 0.0,
+      "comp+rep": 0.988
+    },
+    "200": {
+      "similarity": 0.713,
+      "complementary": 0.0,
+      "comp+rep": 1.0
+    },
+    "400": {
+      "similarity": 0.762,
+      "complementary": 0.013,
+      "comp+rep": 0.988
+    }
+  }
+}

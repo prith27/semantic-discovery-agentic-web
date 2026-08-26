@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+results/api_cache/
+results/checkpoints/
+results/paper_run.log
+*.aux
+*.log
+*.out
+*.synctex.gz
+paper/main.pdf

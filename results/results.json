@@ -1,0 +1,445 @@
+{
+  "honest": {
+    "regime": "A: honest",
+    "by_k": {
+      "3": {
+        "random": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 3.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.8375,
+          "success_rate_first_epoch": 0.8375,
+          "epoch_rates": [
+            0.8375
+          ],
+          "avg_team_size": 3.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 1.0,
+          "epoch_rates": [
+            1.0
+          ],
+          "avg_team_size": 1.8875,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 0.975,
+          "epoch_rates": [
+            0.975,
+            0.9875,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "avg_team_size": 2.4375,
+          "n": 80,
+          "epochs": 5
+        }
+      },
+      "5": {
+        "random": {
+          "success_rate": 0.175,
+          "success_rate_first_epoch": 0.175,
+          "epoch_rates": [
+            0.175
+          ],
+          "avg_team_size": 5.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.95,
+          "success_rate_first_epoch": 0.95,
+          "epoch_rates": [
+            0.95
+          ],
+          "avg_team_size": 5.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 1.0,
+          "epoch_rates": [
+            1.0
+          ],
+          "avg_team_size": 1.8875,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 1.0,
+          "epoch_rates": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "avg_team_size": 2.375,
+          "n": 80,
+          "epochs": 5
+        }
+      },
+      "8": {
+        "random": {
+          "success_rate": 0.325,
+          "success_rate_first_epoch": 0.325,
+          "epoch_rates": [
+            0.325
+          ],
+          "avg_team_size": 8.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 1.0,
+          "epoch_rates": [
+            1.0
+          ],
+          "avg_team_size": 8.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 1.0,
+          "epoch_rates": [
+            1.0
+          ],
+          "avg_team_size": 1.8875,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 1.0,
+          "epoch_rates": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "avg_team_size": 2.5625,
+          "n": 80,
+          "epochs": 5
+        }
+      }
+    }
+  },
+  "spam": {
+    "regime": "B: spam",
+    "by_k": {
+      "3": {
+        "random": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 3.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.55,
+          "success_rate_first_epoch": 0.55,
+          "epoch_rates": [
+            0.55
+          ],
+          "avg_team_size": 3.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 1.075,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 0.6875,
+          "epoch_rates": [
+            0.6875,
+            0.9125,
+            0.95,
+            0.975,
+            1.0
+          ],
+          "avg_team_size": 2.7875,
+          "n": 80,
+          "epochs": 5
+        }
+      },
+      "5": {
+        "random": {
+          "success_rate": 0.175,
+          "success_rate_first_epoch": 0.175,
+          "epoch_rates": [
+            0.175
+          ],
+          "avg_team_size": 5.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.7625,
+          "success_rate_first_epoch": 0.7625,
+          "epoch_rates": [
+            0.7625
+          ],
+          "avg_team_size": 5.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 1.075,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 0.725,
+          "epoch_rates": [
+            0.725,
+            0.9125,
+            0.9625,
+            0.975,
+            1.0
+          ],
+          "avg_team_size": 3.15,
+          "n": 80,
+          "epochs": 5
+        }
+      },
+      "8": {
+        "random": {
+          "success_rate": 0.325,
+          "success_rate_first_epoch": 0.325,
+          "epoch_rates": [
+            0.325
+          ],
+          "avg_team_size": 8.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.95,
+          "success_rate_first_epoch": 0.95,
+          "epoch_rates": [
+            0.95
+          ],
+          "avg_team_size": 8.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 1.075,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 0.7875,
+          "epoch_rates": [
+            0.7875,
+            0.9375,
+            0.975,
+            0.975,
+            1.0
+          ],
+          "avg_team_size": 2.7375,
+          "n": 80,
+          "epochs": 5
+        }
+      }
+    }
+  },
+  "churn": {
+    "regime": "C: churn+spam",
+    "by_k": {
+      "3": {
+        "random": {
+          "success_rate": 0.0,
+          "success_rate_first_epoch": 0.0,
+          "epoch_rates": [
+            0.0
+          ],
+          "avg_team_size": 3.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.525,
+          "success_rate_first_epoch": 0.525,
+          "epoch_rates": [
+            0.525
+          ],
+          "avg_team_size": 3.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 1.1,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 1.0,
+          "success_rate_first_epoch": 0.7,
+          "epoch_rates": [
+            0.7,
+            0.95,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "avg_team_size": 2.675,
+          "n": 80,
+          "epochs": 5
+        }
+      },
+      "5": {
+        "random": {
+          "success_rate": 0.125,
+          "success_rate_first_epoch": 0.125,
+          "epoch_rates": [
+            0.125
+          ],
+          "avg_team_size": 5.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.775,
+          "success_rate_first_epoch": 0.775,
+          "epoch_rates": [
+            0.775
+          ],
+          "avg_team_size": 5.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 1.1,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 0.9875,
+          "success_rate_first_epoch": 0.625,
+          "epoch_rates": [
+            0.625,
+            0.9375,
+            0.9625,
+            0.9875,
+            0.9875
+          ],
+          "avg_team_size": 3.025,
+          "n": 80,
+          "epochs": 5
+        }
+      },
+      "8": {
+        "random": {
+          "success_rate": 0.3,
+          "success_rate_first_epoch": 0.3,
+          "epoch_rates": [
+            0.3
+          ],
+          "avg_team_size": 8.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "similarity": {
+          "success_rate": 0.9625,
+          "success_rate_first_epoch": 0.9625,
+          "epoch_rates": [
+            0.9625
+          ],
+          "avg_team_size": 8.0,
+          "n": 80,
+          "epochs": 1
+        },
+        "complementary": {
+          "success_rate": 0.0125,
+          "success_rate_first_epoch": 0.0125,
+          "epoch_rates": [
+            0.0125
+          ],
+          "avg_team_size": 1.1,
+          "n": 80,
+          "epochs": 1
+        },
+        "comp+rep": {
+          "success_rate": 0.9875,
+          "success_rate_first_epoch": 0.8,
+          "epoch_rates": [
+            0.8,
+            0.9625,
+            0.9625,
+            1.0,
+            0.9875
+          ],
+          "avg_team_size": 2.575,
+          "n": 80,
+          "epochs": 5
+        }
+      }
+    }
+  },
+  "config": {
+    "seed": 0,
+    "n_agents": 300,
+    "n_tasks": 80,
+    "skill_dim": 12,
+    "ks": [
+      3,
+      5,
+      8
+    ],
+    "spam_frac": 0.4,
+    "with_anthropic": false,
+    "anthropic_max_tasks": 30
+  }
+}

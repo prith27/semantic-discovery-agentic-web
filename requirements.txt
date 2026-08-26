@@ -1,0 +1,5 @@
+numpy>=1.26
+matplotlib>=3.8
+anthropic>=0.40.0
+python-dotenv>=1.0.0
+tqdm>=4.66

@@ -1,0 +1,51 @@
+% Minimal NeurIPS-like style for local compilation (anonymous workshop submission).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips}[2024/01/01 NeurIPS-like workshop style]
+
+\RequirePackage[letterpaper,margin=1in]{geometry}
+\RequirePackage{times}
+\RequirePackage[numbers]{natbib}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath,amssymb,amsfonts,amsthm}
+\RequirePackage{booktabs}
+\RequirePackage{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{microtype}
+\RequirePackage{url}
+\RequirePackage[toc,page]{appendix}
+\RequirePackage[
+  font=small,
+  labelfont={bf,small},
+  labelsep=period,
+  skip=5pt,
+  justification=justified,
+  singlelinecheck=true
+]{caption}
+\captionsetup[figure]{font=small, labelfont={bf,small}}
+\captionsetup[table]{font=small, labelfont={bf,small}}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\bibliographystyle{plainnat}
+
+\renewcommand{\rmdefault}{ptm}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+
+\newcommand{\fixtitle}[1]{\gdef\@title{#1}}
+\newcommand{\fixauthor}[1]{\gdef\@author{#1}}
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\bfseries \@title\par}
+    \vspace{1.0em}
+    {\large \@author\par}
+    \vspace{0.5em}
+    {\large Anonymous submission to the NeurIPS 2026 Workshop on Agentic Web\par}
+    \vspace{1.2em}
+  \end{center}
+}
