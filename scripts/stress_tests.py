@@ -1,7 +1,8 @@
-"""Offline experiments added for the camera-ready version (no API calls).
+"""Offline stress tests: probe budget, scale and churn, probe gaming, graded skills,
+noisy feedback and collusion, and context-dependent skills (no API calls).
 
 Usage:
-    PYTHONPATH=. python scripts/camera_ready.py [budget|scale|gaming|partial|all]
+    PYTHONPATH=. python scripts/stress_tests.py [budget|scale|gaming|partial|feedback|context|all]
 """
 
 from __future__ import annotations
@@ -34,7 +35,7 @@ from src.env import (
     update_reputation,
 )
 
-OUT = Path("results/camera_ready")
+OUT = Path("results/stress_tests")
 SKILL_DIM = 12
 
 

@@ -109,6 +109,24 @@ PYTHONPATH=. python scripts/run_multiseed.py
 
 Output: `results/multiseed_paper_protocol.json`
 
+### Stress tests (paper Section 7, offline)
+
+Probe budget, scale and churn up to N=5000, probe gaming, graded skills, noisy feedback and collusion, and context-dependent skills (no API):
+
+```bash
+PYTHONPATH=. python scripts/stress_tests.py all        # or: budget | scale | gaming | partial | feedback | context
+```
+
+Outputs go to `results/stress_tests/`.
+
+### LLM controls (paper tone gradient)
+
+```bash
+LLM_PROVIDER=openai PYTHONPATH=. python scripts/llm_controls.py
+```
+
+Output: `results/llm_controls_openai.json`. The MCP registry snapshot used by the pilot is `data/mcp_registry_snapshot.json`.
+
 
 ## Layout
 
