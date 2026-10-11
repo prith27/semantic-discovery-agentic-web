@@ -36,32 +36,51 @@ def select_similarity(reg: Registry, req: np.ndarray, k: int) -> list[int]:
     return [int(ids[i]) for i in order]
 
 
+def _greedy_cover(
+    ids: np.ndarray,
+    req: np.ndarray,
+    k: int,
+    effective: np.ndarray,
+    weight: np.ndarray | None = None,
+    binary_gain: bool = True,
+) -> list[int]:
+    """Greedy cover over rows of `effective` (aligned with `ids`).
+
+    Ties go to the lowest agent id, matching a left-to-right scan.
+    """
+    remaining = req.copy()
+    picked = np.zeros(len(ids), dtype=bool)
+    team: list[int] = []
+    for _ in range(k):
+        if not np.any(remaining > 0):
+            break
+        if binary_gain:
+            gain = ((effective > 0) & (remaining > 0)).sum(axis=1).astype(np.float64)
+        else:
+            gain = np.minimum(effective, remaining).sum(axis=1)
+        score = gain if weight is None else gain * weight
+        score = np.where(picked, -np.inf, score)
+        j = int(np.argmax(score))
+        if not np.isfinite(score[j]) or score[j] <= 0:
+            break
+        picked[j] = True
+        team.append(int(ids[j]))
+        remaining = np.maximum(remaining - effective[j], 0)
+    return team
+
+
 def select_complementary_greedy(reg: Registry, req: np.ndarray, k: int) -> list[int]:
     """Greedy set-cover style: pick agents that cover the most remaining required skills.
 
     Uses advertised skills for selection (realistic open network); evaluation uses true skills.
     """
-    ids = list(map(int, reg.active_ids()))
-    if not ids:
+    ids = reg.active_ids()
+    if len(ids) == 0:
         return []
+    team = _greedy_cover(ids, req, k, reg.advertised[ids])
     remaining = req.copy()
-    team: list[int] = []
-    for _ in range(k):
-        if not np.any(remaining > 0):
-            break
-        best_i = None
-        best_gain = -1.0
-        for i in ids:
-            if i in team:
-                continue
-            gain = float(np.sum((reg.advertised[i] > 0) & (remaining > 0)))
-            if gain > best_gain:
-                best_gain = gain
-                best_i = i
-        if best_i is None or best_gain <= 0:
-            break
-        team.append(best_i)
-        remaining = np.maximum(remaining - reg.advertised[best_i], 0)
+    for i in team:
+        remaining = np.maximum(remaining - reg.advertised[i], 0)
     # If still room and uncovered, fill by similarity as weak fallback
     if len(team) < k and np.any(remaining > 0):
         extra = select_similarity(reg, remaining, k - len(team))
@@ -77,65 +96,44 @@ def select_complementary_reputation(reg: Registry, req: np.ndarray, k: int) -> l
     effective = verified ∪ (advertised * soft trust), so unknown ads are discounted
     until outcomes attest them. Spammers lose reputation and stop dominating cover.
     """
-    ids = list(map(int, reg.active_ids()))
-    if not ids:
+    ids = reg.active_ids()
+    if len(ids) == 0:
         return []
-    remaining = req.copy()
-    team: list[int] = []
-    for _ in range(k):
-        if not np.any(remaining > 0):
-            break
-        best_i = None
-        best_score = -1.0
-        for i in ids:
-            if i in team:
-                continue
-            trust = float(reg.reputation[i])
-            # Believe verified bits fully; believe unverified ads only proportional to trust.
-            unverified_ads = (reg.advertised[i] > 0) & (reg.verified[i] <= 0)
-            effective = reg.verified[i].copy()
-            effective[unverified_ads] = trust  # soft belief in [0,1]
-            gain = float(np.sum(np.minimum(effective, remaining)))
-            score = gain * (0.15 + 0.85 * trust)
-            if score > best_score:
-                best_score = score
-                best_i = i
-        if best_i is None or best_score <= 0:
-            break
-        team.append(best_i)
-        # Remove covered bits using the same effective model
-        trust = float(reg.reputation[best_i])
-        unverified_ads = (reg.advertised[best_i] > 0) & (reg.verified[best_i] <= 0)
-        effective = reg.verified[best_i].copy()
-        effective[unverified_ads] = trust
-        remaining = np.maximum(remaining - effective, 0)
-    return team
+    trust = reg.reputation[ids]
+    adv = reg.advertised[ids]
+    ver = reg.verified[ids]
+    # Believe verified bits fully; believe unverified ads only proportional to trust.
+    effective = ver.copy()
+    unverified_ads = (adv > 0) & (ver <= 0)
+    effective[unverified_ads] = np.broadcast_to(trust[:, None], adv.shape)[unverified_ads]
+    weight = 0.15 + 0.85 * trust
+    return _greedy_cover(ids, req, k, effective, weight=weight, binary_gain=False)
+
+
+def select_complementary_reputation_guarded(reg: Registry, req: np.ndarray, k: int) -> list[int]:
+    """Like comp+rep, but verified bits lose weight once outcome trust falls below 0.5.
+
+    Probe attestations then cannot outvote a record of failed teams.
+    """
+    ids = reg.active_ids()
+    if len(ids) == 0:
+        return []
+    trust = reg.reputation[ids]
+    adv = reg.advertised[ids]
+    ver = reg.verified[ids]
+    effective = ver * np.minimum(1.0, 2.0 * trust)[:, None]
+    unverified_ads = (adv > 0) & (ver <= 0)
+    effective[unverified_ads] = np.broadcast_to(trust[:, None], adv.shape)[unverified_ads]
+    weight = 0.15 + 0.85 * trust
+    return _greedy_cover(ids, req, k, effective, weight=weight, binary_gain=False)
 
 
 def select_oracle_true(reg: Registry, req: np.ndarray, k: int) -> list[int]:
     """Upper bound: greedy cover using true skills (oracle knows ground truth)."""
-    ids = list(map(int, reg.active_ids()))
-    if not ids:
+    ids = reg.active_ids()
+    if len(ids) == 0:
         return []
-    remaining = req.copy()
-    team: list[int] = []
-    for _ in range(k):
-        if not np.any(remaining > 0):
-            break
-        best_i = None
-        best_gain = -1.0
-        for i in ids:
-            if i in team:
-                continue
-            gain = float(np.sum((reg.true_skills[i] > 0) & (remaining > 0)))
-            if gain > best_gain:
-                best_gain = gain
-                best_i = i
-        if best_i is None or best_gain <= 0:
-            break
-        team.append(best_i)
-        remaining = np.maximum(remaining - reg.true_skills[best_i], 0)
-    return team
+    return _greedy_cover(ids, req, k, reg.true_skills[ids])
 
 
 METHODS = {

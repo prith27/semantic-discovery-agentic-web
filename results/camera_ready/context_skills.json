@@ -1,0 +1,91 @@
+{
+  "config": {
+    "n": 200,
+    "n_tasks": 80,
+    "k": 5,
+    "epochs": 5,
+    "probes": 80,
+    "contexts": 4,
+    "spam": 0.4
+  },
+  "results": {
+    "1.0": {
+      "similarity": {
+        "mean": 0.775,
+        "std": 0.06754628043053146
+      },
+      "complementary": {
+        "mean": 0.01,
+        "std": 0.009354143466934854
+      },
+      "comp+rep": {
+        "mean": 0.9974999999999999,
+        "std": 0.004999999999999982
+      },
+      "comp+rep per context": {
+        "mean": 0.97,
+        "std": 0.016955824957813174
+      },
+      "oracle (static skills)": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "oracle (context aware)": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "0.75": {
+      "similarity": {
+        "mean": 0.535,
+        "std": 0.03984344362627307
+      },
+      "complementary": {
+        "mean": 0.0025,
+        "std": 0.005
+      },
+      "comp+rep": {
+        "mean": 0.7550000000000001,
+        "std": 0.1329003386000201
+      },
+      "comp+rep per context": {
+        "mean": 0.9450000000000001,
+        "std": 0.0322102468168128
+      },
+      "oracle (static skills)": {
+        "mean": 0.2975,
+        "std": 0.06041522986797286
+      },
+      "oracle (context aware)": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "0.5": {
+      "similarity": {
+        "mean": 0.2575,
+        "std": 0.03588175023601831
+      },
+      "complementary": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "comp+rep": {
+        "mean": 0.19,
+        "std": 0.049623583103198025
+      },
+      "comp+rep per context": {
+        "mean": 0.8975,
+        "std": 0.012247448713915901
+      },
+      "oracle (static skills)": {
+        "mean": 0.0625,
+        "std": 0.007905694150420946
+      },
+      "oracle (context aware)": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    }
+  }
+}

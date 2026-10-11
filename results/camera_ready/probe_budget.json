@@ -1,0 +1,1755 @@
+{
+  "config": {
+    "n": 200,
+    "n_tasks": 80,
+    "k": 5,
+    "epochs": 5,
+    "spam": 0.4
+  },
+  "probes_and_rep": {
+    "0": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.525,
+            0.9625,
+            0.9875,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.525,
+          "mean_rate": 0.8925000000000001,
+          "avg_team_size": 4.2175,
+          "probes_used": 0,
+          "failures_total": 43,
+          "failures_to_95": 41,
+          "probes_to_95": 0,
+          "select_ms": 0.07063472499999945
+        },
+        {
+          "epoch_rates": [
+            0.525,
+            0.925,
+            1.0,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.525,
+          "mean_rate": 0.8875,
+          "avg_team_size": 4.1975,
+          "probes_used": 0,
+          "failures_total": 45,
+          "failures_to_95": 44,
+          "probes_to_95": 0,
+          "select_ms": 0.07004731500000069
+        },
+        {
+          "epoch_rates": [
+            0.525,
+            0.975,
+            0.975,
+            0.9875,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.525,
+          "mean_rate": 0.89,
+          "avg_team_size": 4.18,
+          "probes_used": 0,
+          "failures_total": 44,
+          "failures_to_95": 40,
+          "probes_to_95": 0,
+          "select_ms": 0.06905010250000003
+        },
+        {
+          "epoch_rates": [
+            0.55,
+            0.9625,
+            1.0,
+            0.9875,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.55,
+          "mean_rate": 0.8975,
+          "avg_team_size": 4.06,
+          "probes_used": 0,
+          "failures_total": 41,
+          "failures_to_95": 39,
+          "probes_to_95": 0,
+          "select_ms": 0.0673548050000014
+        },
+        {
+          "epoch_rates": [
+            0.5375,
+            0.9625,
+            1.0,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.5375,
+          "mean_rate": 0.8975,
+          "avg_team_size": 4.1525,
+          "probes_used": 0,
+          "failures_total": 41,
+          "failures_to_95": 40,
+          "probes_to_95": 0,
+          "select_ms": 0.06916788999999923
+        }
+      ],
+      "final": {
+        "mean": 0.9949999999999999,
+        "std": 0.006123724356957924
+      },
+      "first": {
+        "mean": 0.5325,
+        "std": 0.010000000000000004
+      },
+      "mean_rate": {
+        "mean": 0.893,
+        "std": 0.003999999999999992
+      },
+      "avg_team_size": {
+        "mean": 4.161499999999999,
+        "std": 0.0550590592000991
+      },
+      "failures_total": {
+        "mean": 42.8,
+        "std": 1.5999999999999999
+      },
+      "select_ms": {
+        "mean": 0.06925096750000016,
+        "std": 0.0011128014203077186
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 40.8,
+      "curve_mean": [
+        0.5325,
+        0.9575000000000001,
+        0.9925,
+        0.9875,
+        0.9949999999999999
+      ],
+      "curve_std": [
+        0.010000000000000004,
+        0.016955824957813153,
+        0.010000000000000004,
+        0.0,
+        0.006123724356957924
+      ]
+    },
+    "5": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.5875,
+            0.9625,
+            0.9875,
+            0.975,
+            0.975
+          ],
+          "final": 0.975,
+          "first": 0.5875,
+          "mean_rate": 0.8975,
+          "avg_team_size": 4.03,
+          "probes_used": 25,
+          "failures_total": 41,
+          "failures_to_95": 36,
+          "probes_to_95": 10,
+          "select_ms": 0.06673436500000074
+        },
+        {
+          "epoch_rates": [
+            0.525,
+            0.9875,
+            0.975,
+            0.975,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.525,
+          "mean_rate": 0.8925000000000001,
+          "avg_team_size": 3.9675,
+          "probes_used": 25,
+          "failures_total": 43,
+          "failures_to_95": 39,
+          "probes_to_95": 10,
+          "select_ms": 0.06659709750000145
+        },
+        {
+          "epoch_rates": [
+            0.5375,
+            0.9625,
+            0.9875,
+            1.0,
+            0.975
+          ],
+          "final": 0.975,
+          "first": 0.5375,
+          "mean_rate": 0.8924999999999998,
+          "avg_team_size": 3.845,
+          "probes_used": 25,
+          "failures_total": 43,
+          "failures_to_95": 40,
+          "probes_to_95": 10,
+          "select_ms": 0.06633667999999995
+        },
+        {
+          "epoch_rates": [
+            0.575,
+            0.9875,
+            0.975,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.575,
+          "mean_rate": 0.905,
+          "avg_team_size": 3.9525,
+          "probes_used": 25,
+          "failures_total": 38,
+          "failures_to_95": 35,
+          "probes_to_95": 10,
+          "select_ms": 0.0679823300000007
+        },
+        {
+          "epoch_rates": [
+            0.5125,
+            0.9625,
+            0.9625,
+            0.9875,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.5125,
+          "mean_rate": 0.8825,
+          "avg_team_size": 3.9175,
+          "probes_used": 25,
+          "failures_total": 47,
+          "failures_to_95": 42,
+          "probes_to_95": 10,
+          "select_ms": 0.06892977500000008
+        }
+      ],
+      "final": {
+        "mean": 0.9875,
+        "std": 0.011180339887498959
+      },
+      "first": {
+        "mean": 0.5475,
+        "std": 0.02893959225697557
+      },
+      "mean_rate": {
+        "mean": 0.8940000000000001,
+        "std": 0.007348469228349557
+      },
+      "avg_team_size": {
+        "mean": 3.9425000000000003,
+        "std": 0.060848171706305194
+      },
+      "failures_total": {
+        "mean": 42.4,
+        "std": 2.939387691339814
+      },
+      "select_ms": {
+        "mean": 0.06731604950000059,
+        "std": 0.000986149395112459
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 38.4,
+      "curve_mean": [
+        0.5475,
+        0.9725000000000001,
+        0.9775,
+        0.985,
+        0.9875
+      ],
+      "curve_std": [
+        0.02893959225697557,
+        0.012247448713915901,
+        0.009354143466934868,
+        0.009354143466934868,
+        0.011180339887498959
+      ]
+    },
+    "10": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.6,
+            0.975,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.6,
+          "mean_rate": 0.9125,
+          "avg_team_size": 3.565,
+          "probes_used": 50,
+          "failures_total": 35,
+          "failures_to_95": 34,
+          "probes_to_95": 20,
+          "select_ms": 0.06169832499999972
+        },
+        {
+          "epoch_rates": [
+            0.525,
+            0.9375,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.525,
+          "mean_rate": 0.8925000000000001,
+          "avg_team_size": 3.9675,
+          "probes_used": 50,
+          "failures_total": 43,
+          "failures_to_95": 43,
+          "probes_to_95": 30,
+          "select_ms": 0.06564983250000045
+        },
+        {
+          "epoch_rates": [
+            0.5,
+            1.0,
+            1.0,
+            0.9875,
+            0.9625
+          ],
+          "final": 0.9625,
+          "first": 0.5,
+          "mean_rate": 0.89,
+          "avg_team_size": 4.0775,
+          "probes_used": 50,
+          "failures_total": 44,
+          "failures_to_95": 40,
+          "probes_to_95": 20,
+          "select_ms": 0.06711864750000351
+        },
+        {
+          "epoch_rates": [
+            0.5625,
+            0.95,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.5625,
+          "mean_rate": 0.9025000000000001,
+          "avg_team_size": 3.81,
+          "probes_used": 50,
+          "failures_total": 39,
+          "failures_to_95": 39,
+          "probes_to_95": 20,
+          "select_ms": 0.06452061499999773
+        },
+        {
+          "epoch_rates": [
+            0.525,
+            1.0,
+            0.975,
+            1.0,
+            0.975
+          ],
+          "final": 0.975,
+          "first": 0.525,
+          "mean_rate": 0.8949999999999999,
+          "avg_team_size": 4.0025,
+          "probes_used": 50,
+          "failures_total": 42,
+          "failures_to_95": 38,
+          "probes_to_95": 20,
+          "select_ms": 0.06680164999999877
+        }
+      ],
+      "final": {
+        "mean": 0.9875,
+        "std": 0.015811388300841892
+      },
+      "first": {
+        "mean": 0.5425,
+        "std": 0.03499999999999999
+      },
+      "mean_rate": {
+        "mean": 0.8985,
+        "std": 0.00815475321515004
+      },
+      "avg_team_size": {
+        "mean": 3.8845,
+        "std": 0.18203983080633754
+      },
+      "failures_total": {
+        "mean": 40.6,
+        "std": 3.261901286060018
+      },
+      "select_ms": {
+        "mean": 0.06515781400000004,
+        "std": 0.0019577146738326045
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 38.8,
+      "curve_mean": [
+        0.5425,
+        0.9724999999999999,
+        0.9924999999999999,
+        0.9974999999999999,
+        0.9875
+      ],
+      "curve_std": [
+        0.03499999999999999,
+        0.02549509756796393,
+        0.010000000000000004,
+        0.004999999999999982,
+        0.015811388300841892
+      ]
+    },
+    "20": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.675,
+            0.9,
+            0.975,
+            0.975,
+            0.9375
+          ],
+          "final": 0.9375,
+          "first": 0.675,
+          "mean_rate": 0.8925000000000001,
+          "avg_team_size": 3.785,
+          "probes_used": 100,
+          "failures_total": 43,
+          "failures_to_95": 36,
+          "probes_to_95": 60,
+          "select_ms": 0.0646953775000006
+        },
+        {
+          "epoch_rates": [
+            0.5375,
+            0.975,
+            0.9875,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.5375,
+          "mean_rate": 0.8975,
+          "avg_team_size": 3.675,
+          "probes_used": 100,
+          "failures_total": 41,
+          "failures_to_95": 39,
+          "probes_to_95": 40,
+          "select_ms": 0.06325085000000147
+        },
+        {
+          "epoch_rates": [
+            0.5375,
+            0.9375,
+            0.975,
+            1.0,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.5375,
+          "mean_rate": 0.8875,
+          "avg_team_size": 3.885,
+          "probes_used": 100,
+          "failures_total": 45,
+          "failures_to_95": 44,
+          "probes_to_95": 60,
+          "select_ms": 0.06640541000000222
+        },
+        {
+          "epoch_rates": [
+            0.5375,
+            0.9625,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.5375,
+          "mean_rate": 0.8975,
+          "avg_team_size": 3.6025,
+          "probes_used": 100,
+          "failures_total": 41,
+          "failures_to_95": 40,
+          "probes_to_95": 40,
+          "select_ms": 0.06241320750000168
+        },
+        {
+          "epoch_rates": [
+            0.575,
+            0.9625,
+            0.9875,
+            0.9625,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.575,
+          "mean_rate": 0.8950000000000001,
+          "avg_team_size": 3.8075,
+          "probes_used": 100,
+          "failures_total": 42,
+          "failures_to_95": 37,
+          "probes_to_95": 40,
+          "select_ms": 0.06485679000000022
+        }
+      ],
+      "final": {
+        "mean": 0.9824999999999999,
+        "std": 0.023184046238739264
+      },
+      "first": {
+        "mean": 0.5725,
+        "std": 0.05326818938165631
+      },
+      "mean_rate": {
+        "mean": 0.8940000000000001,
+        "std": 0.0037416573867739447
+      },
+      "avg_team_size": {
+        "mean": 3.751,
+        "std": 0.10013241233486786
+      },
+      "failures_total": {
+        "mean": 42.4,
+        "std": 1.4966629547095764
+      },
+      "select_ms": {
+        "mean": 0.06432432700000124,
+        "std": 0.0013825217817899178
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 39.2,
+      "curve_mean": [
+        0.5725,
+        0.9475,
+        0.9824999999999999,
+        0.985,
+        0.9824999999999999
+      ],
+      "curve_std": [
+        0.05326818938165631,
+        0.02669269563007827,
+        0.006123724356957978,
+        0.014577379737113249,
+        0.023184046238739264
+      ]
+    },
+    "40": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.575,
+            0.975,
+            0.975,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.575,
+          "mean_rate": 0.905,
+          "avg_team_size": 3.4625,
+          "probes_used": 200,
+          "failures_total": 38,
+          "failures_to_95": 36,
+          "probes_to_95": 80,
+          "select_ms": 0.06065904749999573
+        },
+        {
+          "epoch_rates": [
+            0.725,
+            0.975,
+            0.975,
+            0.9875,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.725,
+          "mean_rate": 0.9299999999999999,
+          "avg_team_size": 3.4525,
+          "probes_used": 200,
+          "failures_total": 28,
+          "failures_to_95": 24,
+          "probes_to_95": 80,
+          "select_ms": 0.060215089999999805
+        },
+        {
+          "epoch_rates": [
+            0.55,
+            0.975,
+            0.9875,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.55,
+          "mean_rate": 0.9,
+          "avg_team_size": 3.545,
+          "probes_used": 200,
+          "failures_total": 40,
+          "failures_to_95": 38,
+          "probes_to_95": 80,
+          "select_ms": 0.06092069500000019
+        },
+        {
+          "epoch_rates": [
+            0.675,
+            0.95,
+            0.9625,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.675,
+          "mean_rate": 0.9175000000000001,
+          "avg_team_size": 3.4425,
+          "probes_used": 200,
+          "failures_total": 33,
+          "failures_to_95": 30,
+          "probes_to_95": 80,
+          "select_ms": 0.060783332500004006
+        },
+        {
+          "epoch_rates": [
+            0.6125,
+            0.9375,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.6125,
+          "mean_rate": 0.9099999999999999,
+          "avg_team_size": 3.6475,
+          "probes_used": 200,
+          "failures_total": 36,
+          "failures_to_95": 36,
+          "probes_to_95": 120,
+          "select_ms": 0.06331563499999582
+        }
+      ],
+      "final": {
+        "mean": 0.9974999999999999,
+        "std": 0.004999999999999982
+      },
+      "first": {
+        "mean": 0.6275000000000001,
+        "std": 0.06442049363362562
+      },
+      "mean_rate": {
+        "mean": 0.9125,
+        "std": 0.010488088481701498
+      },
+      "avg_team_size": {
+        "mean": 3.5100000000000002,
+        "std": 0.07778174593052022
+      },
+      "failures_total": {
+        "mean": 35.0,
+        "std": 4.1952353926806065
+      },
+      "select_ms": {
+        "mean": 0.06117875999999911,
+        "std": 0.0010943451164185977
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 32.8,
+      "curve_mean": [
+        0.6275000000000001,
+        0.9625,
+        0.9800000000000001,
+        0.9949999999999999,
+        0.9974999999999999
+      ],
+      "curve_std": [
+        0.06442049363362562,
+        0.015811388300841892,
+        0.012747548783981964,
+        0.006123724356957924,
+        0.004999999999999982
+      ]
+    },
+    "80": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.8,
+            0.9375,
+            0.975,
+            1.0,
+            0.975
+          ],
+          "final": 0.975,
+          "first": 0.8,
+          "mean_rate": 0.9375,
+          "avg_team_size": 3.14,
+          "probes_used": 400,
+          "failures_total": 25,
+          "failures_to_95": 23,
+          "probes_to_95": 240,
+          "select_ms": 0.058024604999996066
+        },
+        {
+          "epoch_rates": [
+            0.7875,
+            0.9875,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.7875,
+          "mean_rate": 0.9525,
+          "avg_team_size": 3.1525,
+          "probes_used": 400,
+          "failures_total": 19,
+          "failures_to_95": 18,
+          "probes_to_95": 160,
+          "select_ms": 0.057157937500001976
+        },
+        {
+          "epoch_rates": [
+            0.725,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.725,
+          "mean_rate": 0.945,
+          "avg_team_size": 3.0525,
+          "probes_used": 400,
+          "failures_total": 22,
+          "failures_to_95": 22,
+          "probes_to_95": 160,
+          "select_ms": 0.06095400249999827
+        },
+        {
+          "epoch_rates": [
+            0.7875,
+            0.9625,
+            1.0,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.7875,
+          "mean_rate": 0.9475,
+          "avg_team_size": 3.145,
+          "probes_used": 400,
+          "failures_total": 21,
+          "failures_to_95": 20,
+          "probes_to_95": 160,
+          "select_ms": 0.05909519250000328
+        },
+        {
+          "epoch_rates": [
+            0.6875,
+            0.9625,
+            0.9875,
+            0.9875,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.6875,
+          "mean_rate": 0.9225,
+          "avg_team_size": 3.2525,
+          "probes_used": 400,
+          "failures_total": 31,
+          "failures_to_95": 28,
+          "probes_to_95": 160,
+          "select_ms": 0.06054655500000283
+        }
+      ],
+      "final": {
+        "mean": 0.9925,
+        "std": 0.010000000000000004
+      },
+      "first": {
+        "mean": 0.7575000000000001,
+        "std": 0.043732139211339754
+      },
+      "mean_rate": {
+        "mean": 0.9410000000000001,
+        "std": 0.010440306508910556
+      },
+      "avg_team_size": {
+        "mean": 3.1485,
+        "std": 0.06345470825714976
+      },
+      "failures_total": {
+        "mean": 23.6,
+        "std": 4.17612260356422
+      },
+      "select_ms": {
+        "mean": 0.059155658500000485,
+        "std": 0.0014451616910857949
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 22.2,
+      "curve_mean": [
+        0.7575000000000001,
+        0.97,
+        0.99,
+        0.9949999999999999,
+        0.9925
+      ],
+      "curve_std": [
+        0.043732139211339754,
+        0.021794494717703373,
+        0.009354143466934856,
+        0.006123724356957924,
+        0.010000000000000004
+      ]
+    },
+    "160": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.825,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.825,
+          "mean_rate": 0.9650000000000001,
+          "avg_team_size": 2.6975,
+          "probes_used": 800,
+          "failures_total": 14,
+          "failures_to_95": 14,
+          "probes_to_95": 320,
+          "select_ms": 0.05266143999999806
+        },
+        {
+          "epoch_rates": [
+            0.8625,
+            0.9875,
+            1.0,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.8625,
+          "mean_rate": 0.9675,
+          "avg_team_size": 2.64,
+          "probes_used": 800,
+          "failures_total": 13,
+          "failures_to_95": 12,
+          "probes_to_95": 320,
+          "select_ms": 0.05191948749999509
+        },
+        {
+          "epoch_rates": [
+            0.925,
+            0.9875,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.925,
+          "mean_rate": 0.9800000000000001,
+          "avg_team_size": 2.7875,
+          "probes_used": 800,
+          "failures_total": 8,
+          "failures_to_95": 7,
+          "probes_to_95": 320,
+          "select_ms": 0.05273917250000315
+        },
+        {
+          "epoch_rates": [
+            0.875,
+            0.9875,
+            0.975,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.875,
+          "mean_rate": 0.9675,
+          "avg_team_size": 2.7225,
+          "probes_used": 800,
+          "failures_total": 13,
+          "failures_to_95": 11,
+          "probes_to_95": 320,
+          "select_ms": 0.05198218249999775
+        },
+        {
+          "epoch_rates": [
+            0.8875,
+            0.9875,
+            0.9875,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.8875,
+          "mean_rate": 0.9724999999999999,
+          "avg_team_size": 2.7025,
+          "probes_used": 800,
+          "failures_total": 11,
+          "failures_to_95": 10,
+          "probes_to_95": 320,
+          "select_ms": 0.05219084749999214
+        }
+      ],
+      "final": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "first": {
+        "mean": 0.875,
+        "std": 0.03259601202601326
+      },
+      "mean_rate": {
+        "mean": 0.9705,
+        "std": 0.00533853912601566
+      },
+      "avg_team_size": {
+        "mean": 2.71,
+        "std": 0.04748684028233507
+      },
+      "failures_total": {
+        "mean": 11.8,
+        "std": 2.1354156504062622
+      },
+      "select_ms": {
+        "mean": 0.05229862599999724,
+        "std": 0.00034094395821108477
+      },
+      "frac_reached_95": 1.0,
+      "failures_to_95_mean": 10.8,
+      "curve_mean": [
+        0.875,
+        0.99,
+        0.99,
+        0.9974999999999999,
+        1.0
+      ],
+      "curve_std": [
+        0.03259601202601326,
+        0.004999999999999982,
+        0.009354143466934856,
+        0.004999999999999982,
+        0.0
+      ]
+    }
+  },
+  "probes_only": {
+    "5": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.3,
+            0.325,
+            0.3625,
+            0.4125,
+            0.375
+          ],
+          "final": 0.375,
+          "first": 0.3,
+          "mean_rate": 0.355,
+          "avg_team_size": 2.6175,
+          "probes_used": 25,
+          "failures_total": 258,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.053479697500002366
+        },
+        {
+          "epoch_rates": [
+            0.0875,
+            0.075,
+            0.1625,
+            0.15,
+            0.1625
+          ],
+          "final": 0.1625,
+          "first": 0.0875,
+          "mean_rate": 0.1275,
+          "avg_team_size": 2.6475,
+          "probes_used": 25,
+          "failures_total": 349,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.053299154999998655
+        },
+        {
+          "epoch_rates": [
+            0.1125,
+            0.1375,
+            0.325,
+            0.3,
+            0.3
+          ],
+          "final": 0.3,
+          "first": 0.1125,
+          "mean_rate": 0.23500000000000001,
+          "avg_team_size": 2.475,
+          "probes_used": 25,
+          "failures_total": 306,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05073229000000068
+        },
+        {
+          "epoch_rates": [
+            0.2,
+            0.225,
+            0.2875,
+            0.2625,
+            0.3125
+          ],
+          "final": 0.3125,
+          "first": 0.2,
+          "mean_rate": 0.2575,
+          "avg_team_size": 2.5475,
+          "probes_used": 25,
+          "failures_total": 297,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05181239249999747
+        },
+        {
+          "epoch_rates": [
+            0.2125,
+            0.2375,
+            0.3,
+            0.2125,
+            0.2125
+          ],
+          "final": 0.2125,
+          "first": 0.2125,
+          "mean_rate": 0.23500000000000001,
+          "avg_team_size": 2.585,
+          "probes_used": 25,
+          "failures_total": 306,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.051723557499999684
+        }
+      ],
+      "final": {
+        "mean": 0.27249999999999996,
+        "std": 0.07558108228915487
+      },
+      "first": {
+        "mean": 0.1825,
+        "std": 0.0760756202735147
+      },
+      "mean_rate": {
+        "mean": 0.24200000000000005,
+        "std": 0.0724120155775269
+      },
+      "avg_team_size": {
+        "mean": 2.5744999999999996,
+        "std": 0.059862342085822196
+      },
+      "failures_total": {
+        "mean": 303.2,
+        "std": 28.964806231010765
+      },
+      "select_ms": {
+        "mean": 0.05220941849999977,
+        "std": 0.0010369892515147768
+      },
+      "frac_reached_95": 0.0,
+      "failures_to_95_mean": null,
+      "curve_mean": [
+        0.1825,
+        0.2,
+        0.28750000000000003,
+        0.26749999999999996,
+        0.27249999999999996
+      ],
+      "curve_std": [
+        0.0760756202735147,
+        0.0862409415533017,
+        0.06754628043053147,
+        0.08824681297361393,
+        0.07558108228915487
+      ]
+    },
+    "10": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.325,
+            0.4125,
+            0.4,
+            0.3875,
+            0.4375
+          ],
+          "final": 0.4375,
+          "first": 0.325,
+          "mean_rate": 0.3925,
+          "avg_team_size": 2.645,
+          "probes_used": 50,
+          "failures_total": 243,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05250709249999569
+        },
+        {
+          "epoch_rates": [
+            0.075,
+            0.15,
+            0.1875,
+            0.1625,
+            0.275
+          ],
+          "final": 0.275,
+          "first": 0.075,
+          "mean_rate": 0.16999999999999998,
+          "avg_team_size": 2.6225,
+          "probes_used": 50,
+          "failures_total": 332,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.053987199999999125
+        },
+        {
+          "epoch_rates": [
+            0.1375,
+            0.3,
+            0.375,
+            0.4125,
+            0.4375
+          ],
+          "final": 0.4375,
+          "first": 0.1375,
+          "mean_rate": 0.3325,
+          "avg_team_size": 2.5825,
+          "probes_used": 50,
+          "failures_total": 267,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.054705697500000705
+        },
+        {
+          "epoch_rates": [
+            0.225,
+            0.2625,
+            0.3625,
+            0.4,
+            0.375
+          ],
+          "final": 0.375,
+          "first": 0.225,
+          "mean_rate": 0.325,
+          "avg_team_size": 2.5625,
+          "probes_used": 50,
+          "failures_total": 270,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.053712484999999255
+        },
+        {
+          "epoch_rates": [
+            0.2375,
+            0.2125,
+            0.2625,
+            0.275,
+            0.3
+          ],
+          "final": 0.3,
+          "first": 0.2375,
+          "mean_rate": 0.25749999999999995,
+          "avg_team_size": 2.59,
+          "probes_used": 50,
+          "failures_total": 297,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05231855499999771
+        }
+      ],
+      "final": {
+        "mean": 0.365,
+        "std": 0.06773108592072033
+      },
+      "first": {
+        "mean": 0.2,
+        "std": 0.0862409415533017
+      },
+      "mean_rate": {
+        "mean": 0.2955,
+        "std": 0.07595064186693884
+      },
+      "avg_team_size": {
+        "mean": 2.6005,
+        "std": 0.029470324056582772
+      },
+      "failures_total": {
+        "mean": 281.8,
+        "std": 30.380256746775533
+      },
+      "select_ms": {
+        "mean": 0.0534462059999985,
+        "std": 0.0009059170818729701
+      },
+      "frac_reached_95": 0.0,
+      "failures_to_95_mean": null,
+      "curve_mean": [
+        0.2,
+        0.26749999999999996,
+        0.3175,
+        0.3275,
+        0.365
+      ],
+      "curve_std": [
+        0.0862409415533017,
+        0.08824681297361393,
+        0.08007808689023484,
+        0.09598176910226233,
+        0.06773108592072033
+      ]
+    },
+    "20": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.4125,
+            0.3875,
+            0.425,
+            0.45,
+            0.5625
+          ],
+          "final": 0.5625,
+          "first": 0.4125,
+          "mean_rate": 0.44749999999999995,
+          "avg_team_size": 2.6675,
+          "probes_used": 100,
+          "failures_total": 221,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.052434067499997905
+        },
+        {
+          "epoch_rates": [
+            0.15,
+            0.1625,
+            0.375,
+            0.4125,
+            0.5
+          ],
+          "final": 0.5,
+          "first": 0.15,
+          "mean_rate": 0.32,
+          "avg_team_size": 2.6125,
+          "probes_used": 100,
+          "failures_total": 272,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05243968000000265
+        },
+        {
+          "epoch_rates": [
+            0.3,
+            0.4125,
+            0.4625,
+            0.4875,
+            0.5625
+          ],
+          "final": 0.5625,
+          "first": 0.3,
+          "mean_rate": 0.44499999999999995,
+          "avg_team_size": 2.635,
+          "probes_used": 100,
+          "failures_total": 222,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05237030499999573
+        },
+        {
+          "epoch_rates": [
+            0.2625,
+            0.4,
+            0.35,
+            0.4125,
+            0.525
+          ],
+          "final": 0.525,
+          "first": 0.2625,
+          "mean_rate": 0.39,
+          "avg_team_size": 2.5475,
+          "probes_used": 100,
+          "failures_total": 244,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05136540999998662
+        },
+        {
+          "epoch_rates": [
+            0.2125,
+            0.275,
+            0.3125,
+            0.4,
+            0.5125
+          ],
+          "final": 0.5125,
+          "first": 0.2125,
+          "mean_rate": 0.3425,
+          "avg_team_size": 2.56,
+          "probes_used": 100,
+          "failures_total": 263,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05230606249999992
+        }
+      ],
+      "final": {
+        "mean": 0.5325,
+        "std": 0.025739075352467507
+      },
+      "first": {
+        "mean": 0.26749999999999996,
+        "std": 0.08824681297361393
+      },
+      "mean_rate": {
+        "mean": 0.389,
+        "std": 0.05192783453986885
+      },
+      "avg_team_size": {
+        "mean": 2.6045,
+        "std": 0.04514975082987721
+      },
+      "failures_total": {
+        "mean": 244.4,
+        "std": 20.771133815947554
+      },
+      "select_ms": {
+        "mean": 0.052183104999996566,
+        "std": 0.0004117281644199409
+      },
+      "frac_reached_95": 0.0,
+      "failures_to_95_mean": null,
+      "curve_mean": [
+        0.26749999999999996,
+        0.3275,
+        0.38500000000000006,
+        0.4325,
+        0.5325
+      ],
+      "curve_std": [
+        0.08824681297361393,
+        0.09598176910226233,
+        0.0532681893816563,
+        0.03221024681681281,
+        0.025739075352467507
+      ]
+    },
+    "40": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.3875,
+            0.45,
+            0.5,
+            0.65,
+            0.7125
+          ],
+          "final": 0.7125,
+          "first": 0.3875,
+          "mean_rate": 0.5399999999999999,
+          "avg_team_size": 2.6625,
+          "probes_used": 200,
+          "failures_total": 184,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.054525105000005625
+        },
+        {
+          "epoch_rates": [
+            0.1625,
+            0.4125,
+            0.5875,
+            0.575,
+            0.7375
+          ],
+          "final": 0.7375,
+          "first": 0.1625,
+          "mean_rate": 0.495,
+          "avg_team_size": 2.5975,
+          "probes_used": 200,
+          "failures_total": 202,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05283522499999416
+        },
+        {
+          "epoch_rates": [
+            0.4125,
+            0.4875,
+            0.575,
+            0.625,
+            0.7
+          ],
+          "final": 0.7,
+          "first": 0.4125,
+          "mean_rate": 0.5599999999999999,
+          "avg_team_size": 2.59,
+          "probes_used": 200,
+          "failures_total": 176,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05154505249999941
+        },
+        {
+          "epoch_rates": [
+            0.4,
+            0.4125,
+            0.5125,
+            0.5375,
+            0.6625
+          ],
+          "final": 0.6625,
+          "first": 0.4,
+          "mean_rate": 0.505,
+          "avg_team_size": 2.5025,
+          "probes_used": 200,
+          "failures_total": 198,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05127791000000104
+        },
+        {
+          "epoch_rates": [
+            0.275,
+            0.4,
+            0.4875,
+            0.5125,
+            0.5875
+          ],
+          "final": 0.5875,
+          "first": 0.275,
+          "mean_rate": 0.4525,
+          "avg_team_size": 2.4925,
+          "probes_used": 200,
+          "failures_total": 219,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.051053749999995235
+        }
+      ],
+      "final": {
+        "mean": 0.68,
+        "std": 0.05220153254455275
+      },
+      "first": {
+        "mean": 0.3275,
+        "std": 0.09598176910226233
+      },
+      "mean_rate": {
+        "mean": 0.5105,
+        "std": 0.037296112397943004
+      },
+      "avg_team_size": {
+        "mean": 2.569,
+        "std": 0.06367102951892642
+      },
+      "failures_total": {
+        "mean": 195.8,
+        "std": 14.918444959177213
+      },
+      "select_ms": {
+        "mean": 0.05224740849999909,
+        "std": 0.0012954907557118226
+      },
+      "frac_reached_95": 0.0,
+      "failures_to_95_mean": null,
+      "curve_mean": [
+        0.3275,
+        0.4325,
+        0.5325,
+        0.5800000000000001,
+        0.68
+      ],
+      "curve_std": [
+        0.09598176910226233,
+        0.03221024681681281,
+        0.04077376607575023,
+        0.051599418601375756,
+        0.05220153254455275
+      ]
+    },
+    "80": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.45,
+            0.65,
+            0.7875,
+            0.8625,
+            0.9
+          ],
+          "final": 0.9,
+          "first": 0.45,
+          "mean_rate": 0.73,
+          "avg_team_size": 2.55,
+          "probes_used": 400,
+          "failures_total": 108,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.051298577500005216
+        },
+        {
+          "epoch_rates": [
+            0.4125,
+            0.575,
+            0.7625,
+            0.8125,
+            0.8625
+          ],
+          "final": 0.8625,
+          "first": 0.4125,
+          "mean_rate": 0.6849999999999999,
+          "avg_team_size": 2.53,
+          "probes_used": 400,
+          "failures_total": 126,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.051559122500000054
+        },
+        {
+          "epoch_rates": [
+            0.4875,
+            0.625,
+            0.65,
+            0.8125,
+            0.825
+          ],
+          "final": 0.825,
+          "first": 0.4875,
+          "mean_rate": 0.68,
+          "avg_team_size": 2.4875,
+          "probes_used": 400,
+          "failures_total": 128,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.05083268499999738
+        },
+        {
+          "epoch_rates": [
+            0.4125,
+            0.5375,
+            0.7375,
+            0.825,
+            0.875
+          ],
+          "final": 0.875,
+          "first": 0.4125,
+          "mean_rate": 0.6775,
+          "avg_team_size": 2.465,
+          "probes_used": 400,
+          "failures_total": 129,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.04980596249999414
+        },
+        {
+          "epoch_rates": [
+            0.4,
+            0.5125,
+            0.6125,
+            0.5875,
+            0.7
+          ],
+          "final": 0.7,
+          "first": 0.4,
+          "mean_rate": 0.5625,
+          "avg_team_size": 2.46,
+          "probes_used": 400,
+          "failures_total": 175,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.050131875000000714
+        }
+      ],
+      "final": {
+        "mean": 0.8325000000000001,
+        "std": 0.07053367989832945
+      },
+      "first": {
+        "mean": 0.4325,
+        "std": 0.03221024681681281
+      },
+      "mean_rate": {
+        "mean": 0.667,
+        "std": 0.05566417160077027
+      },
+      "avg_team_size": {
+        "mean": 2.4985,
+        "std": 0.03569313659514945
+      },
+      "failures_total": {
+        "mean": 133.2,
+        "std": 22.265668640308107
+      },
+      "select_ms": {
+        "mean": 0.0507256444999995,
+        "std": 0.0006682473595732255
+      },
+      "frac_reached_95": 0.0,
+      "failures_to_95_mean": null,
+      "curve_mean": [
+        0.4325,
+        0.5800000000000001,
+        0.71,
+        0.78,
+        0.8325000000000001
+      ],
+      "curve_std": [
+        0.03221024681681281,
+        0.051599418601375756,
+        0.06726812023536853,
+        0.09797958971132711,
+        0.07053367989832945
+      ]
+    },
+    "160": {
+      "runs": [
+        {
+          "epoch_rates": [
+            0.65,
+            0.8625,
+            0.9,
+            1.0,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.65,
+          "mean_rate": 0.8825,
+          "avg_team_size": 2.4025,
+          "probes_used": 800,
+          "failures_total": 47,
+          "failures_to_95": 47,
+          "probes_to_95": 640,
+          "select_ms": 0.04853040750000648
+        },
+        {
+          "epoch_rates": [
+            0.575,
+            0.8125,
+            0.9375,
+            0.975,
+            0.9875
+          ],
+          "final": 0.9875,
+          "first": 0.575,
+          "mean_rate": 0.8575000000000002,
+          "avg_team_size": 2.5125,
+          "probes_used": 800,
+          "failures_total": 57,
+          "failures_to_95": 56,
+          "probes_to_95": 640,
+          "select_ms": 0.04943196250000059
+        },
+        {
+          "epoch_rates": [
+            0.625,
+            0.8125,
+            0.8125,
+            0.9375,
+            0.975
+          ],
+          "final": 0.975,
+          "first": 0.625,
+          "mean_rate": 0.8324999999999999,
+          "avg_team_size": 2.405,
+          "probes_used": 800,
+          "failures_total": 67,
+          "failures_to_95": 67,
+          "probes_to_95": 800,
+          "select_ms": 0.048304882499989876
+        },
+        {
+          "epoch_rates": [
+            0.5375,
+            0.825,
+            0.9125,
+            0.9875,
+            1.0
+          ],
+          "final": 1.0,
+          "first": 0.5375,
+          "mean_rate": 0.8525,
+          "avg_team_size": 2.415,
+          "probes_used": 800,
+          "failures_total": 59,
+          "failures_to_95": 59,
+          "probes_to_95": 640,
+          "select_ms": 0.048524167499987
+        },
+        {
+          "epoch_rates": [
+            0.5125,
+            0.5875,
+            0.8125,
+            0.8625,
+            0.9125
+          ],
+          "final": 0.9125,
+          "first": 0.5125,
+          "mean_rate": 0.7375,
+          "avg_team_size": 2.39,
+          "probes_used": 800,
+          "failures_total": 105,
+          "failures_to_95": null,
+          "probes_to_95": null,
+          "select_ms": 0.04855811499999696
+        }
+      ],
+      "final": {
+        "mean": 0.975,
+        "std": 0.032596012026013255
+      },
+      "first": {
+        "mean": 0.5800000000000001,
+        "std": 0.051599418601375756
+      },
+      "mean_rate": {
+        "mean": 0.8325000000000001,
+        "std": 0.05009990019950139
+      },
+      "avg_team_size": {
+        "mean": 2.425,
+        "std": 0.0444690903887184
+      },
+      "failures_total": {
+        "mean": 67.0,
+        "std": 20.039960079800558
+      },
+      "select_ms": {
+        "mean": 0.04866990699999618,
+        "std": 0.00039170627626218974
+      },
+      "frac_reached_95": 0.8,
+      "failures_to_95_mean": 57.25,
+      "curve_mean": [
+        0.5800000000000001,
+        0.78,
+        0.875,
+        0.9525,
+        0.975
+      ],
+      "curve_std": [
+        0.051599418601375756,
+        0.09797958971132711,
+        0.05244044240850758,
+        0.049623583103198005,
+        0.032596012026013255
+      ]
+    }
+  }
+}

@@ -19,6 +19,8 @@ class Registry:
     verified: np.ndarray  # (N, d)
     rng: np.random.Generator = field(repr=False)
     cards: list[str] | None = None  # natural-language marketplace listings
+    # Agents that pass sandbox probes on every claimed bit but keep their true skills.
+    gamers: np.ndarray | None = None
 
 
     @property
@@ -90,8 +92,16 @@ def sample_tasks(
     return tasks
 
 
-def apply_churn(reg: Registry, leave_frac: float = 0.1, join_frac: float = 0.1) -> None:
-    """Randomly deactivate some alive agents and reactivate some dead ones."""
+def apply_churn(
+    reg: Registry,
+    leave_frac: float = 0.1,
+    join_frac: float = 0.1,
+    reset_joiners: bool = False,
+) -> None:
+    """Randomly deactivate some alive agents and reactivate some dead ones.
+
+    With reset_joiners, rejoining agents arrive with no trust history.
+    """
     alive = reg.active_ids()
     dead = np.where(~reg.alive)[0]
     n_leave = min(len(alive), int(leave_frac * reg.n))
@@ -102,6 +112,9 @@ def apply_churn(reg: Registry, leave_frac: float = 0.1, join_frac: float = 0.1) 
     if n_join:
         join = reg.rng.choice(dead, size=n_join, replace=False)
         reg.alive[join] = True
+        if reset_joiners:
+            reg.reputation[join] = 0.5
+            reg.verified[join] = 0.0
 
 
 def team_covers(true_skills: np.ndarray, team: list[int], req: np.ndarray) -> bool:
@@ -118,8 +131,13 @@ def update_reputation(
     success: bool,
     req: np.ndarray | None = None,
     lr: float = 0.2,
+    revoke: bool = False,
 ) -> None:
-    """Team-level outcome update (no oracle skill labels)."""
+    """Team-level outcome update (no oracle skill labels).
+
+    With revoke, a failed team loses its attestations on the required bits, so they
+    must be re-earned through later probes.
+    """
     target = 1.0 if success else 0.0
     for i in team:
         reg.reputation[i] = (1 - lr) * reg.reputation[i] + lr * target
@@ -127,6 +145,8 @@ def update_reputation(
             # Extra ding if the agent claimed many required skills (responsibility heuristic).
             claimed = float(np.sum((reg.advertised[i] > 0) & (req > 0)))
             reg.reputation[i] = max(0.0, reg.reputation[i] - 0.05 * claimed)
+            if revoke:
+                reg.verified[i][req > 0] = 0.0
 
 
 def run_capability_probes(reg: Registry, n_probes: int = 40) -> None:
@@ -144,7 +164,8 @@ def run_capability_probes(reg: Registry, n_probes: int = 40) -> None:
         if len(claimed) == 0:
             continue
         bit = int(reg.rng.choice(claimed))
-        if reg.true_skills[i, bit] > 0:
+        gamed = reg.gamers is not None and bool(reg.gamers[i])
+        if reg.true_skills[i, bit] > 0 or gamed:
             reg.verified[i, bit] = 1.0
             reg.reputation[i] = min(1.0, reg.reputation[i] + 0.05)
         else:

@@ -1,0 +1,82 @@
+{
+  "same_cards|spam|cosine|k3|seed0": {
+    "success_rate": 0.8333333333333334,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "same_cards|spam|cosine|k5|seed0": {
+    "success_rate": 0.9166666666666666,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "same_cards|churn|cosine|k3|seed0": {
+    "success_rate": 0.7916666666666666,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "same_cards|churn|cosine|k5|seed0": {
+    "success_rate": 0.8333333333333334,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|cosine|k3|seed0": {
+    "success_rate": 0.6666666666666666,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|cosine|k5|seed0": {
+    "success_rate": 0.7916666666666666,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|full|k3|seed0": {
+    "success_rate": 0.5833333333333334,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|full|k5|seed0": {
+    "success_rate": 0.875,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|cosine|k3|seed1": {
+    "success_rate": 0.7083333333333334,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|cosine|k5|seed1": {
+    "success_rate": 0.8333333333333334,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|full|k3|seed1": {
+    "success_rate": 0.4166666666666667,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|full|k5|seed1": {
+    "success_rate": 0.9583333333333334,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|cosine|k3|seed2": {
+    "success_rate": 0.7916666666666666,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|cosine|k5|seed2": {
+    "success_rate": 0.875,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|full|k3|seed2": {
+    "success_rate": 0.75,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0
+  },
+  "stealth|spam|full|k5|seed2": {
+    "success_rate": 0.9583333333333334,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0
+  }
+}

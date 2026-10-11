@@ -1,0 +1,38 @@
+{
+  "honest|cosine|k3|seed0": {
+    "success_rate": 0.875,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0,
+    "pool_size": 15.0
+  },
+  "honest|cosine|k5|seed0": {
+    "success_rate": 0.9583333333333334,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0,
+    "pool_size": 15.0
+  },
+  "spam|cosine|k3|seed0": {
+    "success_rate": 0.4166666666666667,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0,
+    "pool_size": 15.0
+  },
+  "spam|cosine|k5|seed0": {
+    "success_rate": 0.625,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0,
+    "pool_size": 15.0
+  },
+  "churn|cosine|k3|seed0": {
+    "success_rate": 0.4166666666666667,
+    "avg_team_size": 3.0,
+    "pool_cover_rate": 1.0,
+    "pool_size": 15.0
+  },
+  "churn|cosine|k5|seed0": {
+    "success_rate": 0.7083333333333334,
+    "avg_team_size": 5.0,
+    "pool_cover_rate": 1.0,
+    "pool_size": 15.0
+  }
+}

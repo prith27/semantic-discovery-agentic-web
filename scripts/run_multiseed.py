@@ -52,7 +52,7 @@ def run_one(seed: int, regime: str, k: int, n_agents: int = 200, n_tasks: int = 
             probes_per_epoch=pr,
             rng=np.random.default_rng(seed + k),
         )
-        out[name] = st["success_rate"]
+        out[name] = (st["success_rate"], st["avg_team_size"])
     return out
 
 
@@ -64,16 +64,19 @@ def main() -> None:
     for regime in regimes:
         for k in ks:
             rows = {m: [] for m in ["random", "similarity", "complementary", "comp+rep", "oracle"]}
+            team_sizes = {m: [] for m in rows}
             for seed in seeds:
                 one = run_one(seed, regime, k)
-                for m, v in one.items():
+                for m, (v, size) in one.items():
                     rows[m].append(v)
+                    team_sizes[m].append(size)
             summary = {}
             for m, vals in rows.items():
                 summary[m] = {
                     "mean": float(np.mean(vals)),
                     "std": float(np.std(vals)),
                     "values": vals,
+                    "avg_team_size": float(np.mean(team_sizes[m])),
                 }
             all_r[regime][str(k)] = summary
     out_path = Path("results/multiseed_paper_protocol.json")
@@ -85,7 +88,7 @@ def main() -> None:
             bits = []
             for m in ["similarity", "complementary", "comp+rep", "oracle"]:
                 s = all_r[regime][str(k)][m]
-                bits.append(f"{m}={s['mean']:.2f}±{s['std']:.2f}")
+                bits.append(f"{m}={s['mean']:.2f}±{s['std']:.2f} (size {s['avg_team_size']:.1f})")
             print(f" k={k}: " + ", ".join(bits))
 
 

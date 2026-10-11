@@ -1,7 +1,8 @@
-"""Anthropic Claude API: NL discovery, spam rewrite, team selection.
+"""LLM API baseline: NL discovery, spam rewrite, team selection.
 
-This is a first-class baseline for the paper — not optional fluff.
-Requires ANTHROPIC_API_KEY. Responses are cached under results/api_cache/.
+LLM_PROVIDER picks the backend: "anthropic" (default, ANTHROPIC_API_KEY, ANTHROPIC_MODEL),
+"openai" (OPENAI_API_KEY, OPENAI_MODEL, OPENAI_REASONING), or "xai" (XAI_API_KEY, XAI_MODEL).
+Responses are cached under results/api_cache/.
 """
 
 from __future__ import annotations
@@ -21,21 +22,73 @@ from .discover import cosine_sim, select_similarity
 from .env import Registry
 
 CACHE_DIR = Path(__file__).resolve().parents[1] / "results" / "api_cache"
+XAI_URL = "https://api.x.ai/v1/chat/completions"
+OPENAI_URL = "https://api.openai.com/v1/chat/completions"
+# Reasoning tokens count against max_completion_tokens, so short answers need headroom.
+REASONING_HEADROOM = 4000
 
 
-def _client():
-    import anthropic
+def provider() -> str:
+    return os.getenv("LLM_PROVIDER", "anthropic").strip().lower()
 
-    key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+
+def _key(name: str) -> str:
+    key = os.getenv(name, "").strip()
     if not key:
-        raise RuntimeError(
-            "ANTHROPIC_API_KEY missing. Set it in .env — API baselines are required for the paper run."
-        )
-    return anthropic.Anthropic(api_key=key)
+        raise RuntimeError(f"{name} missing. Set it in .env.")
+    return key
 
 
 def _model() -> str:
+    if provider() == "openai":
+        return os.getenv("OPENAI_MODEL", "gpt-6-luna")
+    if provider() == "xai":
+        return os.getenv("XAI_MODEL", "grok-4.7")
     return os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
+
+
+def _call(prompt: str, max_tokens: int) -> str:
+    if provider() == "openai":
+        import httpx
+
+        resp = httpx.post(
+            OPENAI_URL,
+            headers={"Authorization": f"Bearer {_key('OPENAI_API_KEY')}"},
+            json={
+                "model": _model(),
+                "reasoning_effort": os.getenv("OPENAI_REASONING", "low"),
+                "max_completion_tokens": max_tokens + REASONING_HEADROOM,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=120,
+        )
+        resp.raise_for_status()
+        return resp.json()["choices"][0]["message"]["content"] or ""
+    if provider() == "xai":
+        import httpx
+
+        resp = httpx.post(
+            XAI_URL,
+            headers={"Authorization": f"Bearer {_key('XAI_API_KEY')}"},
+            json={
+                "model": _model(),
+                "max_tokens": max_tokens,
+                "temperature": 0,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=120,
+        )
+        resp.raise_for_status()
+        return resp.json()["choices"][0]["message"]["content"] or ""
+    import anthropic
+
+    client = anthropic.Anthropic(api_key=_key("ANTHROPIC_API_KEY"))
+    msg = client.messages.create(
+        model=_model(),
+        max_tokens=max_tokens,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return "".join(getattr(b, "text", "") for b in msg.content)
 
 
 def _cache_get(key: str) -> str | None:
@@ -67,13 +120,7 @@ def claude_text(
     last_err: Exception | None = None
     for attempt in range(max_retries):
         try:
-            client = _client()
-            msg = client.messages.create(
-                model=_model(),
-                max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            text = "".join(getattr(b, "text", "") for b in msg.content)
+            text = _call(prompt, max_tokens)
             if use_cache:
                 _cache_set(raw_key, text)
             time.sleep(0.15)
@@ -81,9 +128,9 @@ def claude_text(
         except Exception as e:
             last_err = e
             wait = min(60.0, 2.0 ** attempt)
-            print(f"[anthropic] attempt {attempt + 1}/{max_retries} failed: {e}; sleep {wait:.1f}s")
+            print(f"[{provider()}] attempt {attempt + 1}/{max_retries} failed: {e}; sleep {wait:.1f}s")
             time.sleep(wait)
-    raise RuntimeError(f"Claude API failed after {max_retries} retries: {last_err}")
+    raise RuntimeError(f"{provider()} API failed after {max_retries} retries: {last_err}")
 
 
 def ensure_nl_cards(reg: Registry) -> list[str]:
@@ -116,23 +163,46 @@ Return only the listing paragraph, no quotes."""
     return n
 
 
+def build_shortlist(reg: Registry, req: np.ndarray, mode: str = "cosine", candidate_pool: int = 15) -> list[int]:
+    """cosine: top cards by similarity. coverage: top cards per required skill. full: every active card."""
+    ids = reg.active_ids()
+    if mode == "full":
+        return [int(i) for i in ids]
+    sims = cosine_sim(req, reg.advertised[ids])
+    order = np.argsort(-sims)
+    if mode == "cosine":
+        return [int(ids[i]) for i in order[: min(candidate_pool, len(ids))]]
+    if mode != "coverage":
+        raise ValueError(f"unknown shortlist mode {mode}")
+    needed = np.where(req > 0)[0]
+    quota = max(3, int(np.ceil(candidate_pool / max(1, len(needed)))))
+    pool: list[int] = []
+    for j in needed:
+        has_j = [i for i in order if reg.advertised[ids[i], j] > 0]
+        for i in has_j[:quota]:
+            if int(ids[i]) not in pool:
+                pool.append(int(ids[i]))
+    for i in order:
+        if len(pool) >= candidate_pool:
+            break
+        if int(ids[i]) not in pool:
+            pool.append(int(ids[i]))
+    return pool
+
+
 def select_anthropic(
     reg: Registry,
     req: np.ndarray,
     k: int,
     candidate_pool: int = 15,
+    shortlist: str = "cosine",
 ) -> list[int]:
     """Claude reads NL cards and picks a complementary team (real API discovery)."""
     cards = ensure_nl_cards(reg)
-    ids = reg.active_ids()
-    if len(ids) == 0:
+    if len(reg.active_ids()) == 0:
         return []
 
-    # Cheap shortlist so each task is 1 API call, not N.
-    sims = cosine_sim(req, reg.advertised[ids])
-    pool_n = min(candidate_pool, len(ids))
-    order = np.argsort(-sims)[:pool_n]
-    pool = [int(ids[i]) for i in order]
+    pool = build_shortlist(reg, req, mode=shortlist, candidate_pool=candidate_pool)
 
     brief = task_brief(req)
     listing = "\n".join(

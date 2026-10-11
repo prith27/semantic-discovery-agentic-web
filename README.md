@@ -41,6 +41,28 @@ EOF
 - `ANTHROPIC_API_KEY` is required for `--paper`.
 - `ANTHROPIC_MODEL` defaults to `claude-sonnet-5` if omitted.
 
+For the second model (OpenAI GPT-6 Luna), add these lines to the same `.env`:
+
+```bash
+LLM_PROVIDER=openai
+OPENAI_API_KEY=sk-your-key-here
+OPENAI_MODEL=gpt-6-luna
+OPENAI_REASONING=low
+```
+
+`LLM_PROVIDER=xai` with `XAI_API_KEY` and `XAI_MODEL` also works for Grok.
+
+Then:
+
+```bash
+PYTHONPATH=. python scripts/run_llm_multiseed.py --check     # test key and model
+PYTHONPATH=. python scripts/run_llm_multiseed.py --dry-run   # estimate tokens
+PYTHONPATH=. python scripts/run_llm_multiseed.py             # 5 seeds x {cosine, coverage, full} shortlists
+PYTHONPATH=. python scripts/mcp_pilot.py                     # real MCP registry pilot
+```
+
+Results go to `results/openai_multiseed.json` and `results/mcp_pilot_openai.json`. The original Claude run stays in `results/results_paper.json`.
+
 **Offline ablation** (numpy only, no `.env` needed):
 
 ```bash
